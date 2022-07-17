@@ -1,0 +1,35 @@
+import React from 'react';
+import './SearchResult.css';
+import StarIcon from '@mui/icons-material/Star';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
+function SearchResult({
+    img,location,title,description,star,price,
+}) {
+  return (
+    <div className='searchResult'>
+        <img src={img} alt=""/>
+        <FavoriteBorderIcon className="searchResult_heart"/>
+        <div className='searchResult_info'>
+            <div className='searchResult_infoTop'>
+                <p>{location}</p>
+                <h3>{title}</h3>
+                <p>{description}</p>
+            </div>
+            <div className='searchResult_infoBottom'>
+                <div className='searchResult_stars'>
+                    <StarIcon className='searchResult_star'/>
+                    <p>
+                        <strong>{star}</strong>
+                    </p>
+                </div>
+                <div className='searchResult_price'>
+                    <h2>{price}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default SearchResult
